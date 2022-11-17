@@ -23,7 +23,12 @@
  */
 
 function local_customsignup_get_additional_fields() {
-    $reasons = explode(",", get_string('regreasonlist', 'local_customsignup'));
+    if ('' != get_config('local_customsignup', 'regreasonlist')) {
+        $reasons = get_config('local_customsignup', 'regreasonlist');
+    }
+    else {
+        $reasons = explode(",", get_string('regreasonlist', 'local_customsignup'));
+    }
     $reasons = array_map('trim', $reasons);
     $reasonkeys = array_combine($reasons, $reasons);
 
