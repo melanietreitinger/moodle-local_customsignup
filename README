@@ -1,0 +1,35 @@
+Requirements
+------------
+
+This theme requires Moodle 3.9+
+
+
+Motivation for this theme
+-------------------------
+With this plugin we can define custom fields for the registration form which are created as "User profile fields" **and** can be defined as "required" *only* for the registration process.
+
+
+Usage & Settings
+----------------
+This plugin uses a hook in login/signup_form.php: core_login_extend_signup_form() in order to add additional fields to the signup form.
+These fields are automatically created as "User profile fields" during installation and populated when a user signs up via email registration.
+
+The fields are:
+
+- confirmname: Users have to use their real name.
+- regreason: Users have to enter a reason for the account creation.
+
+Both fields can be activated and declared as required in admin settings.
+
+
+Note
+----
+The language of the database entrief of the "User profile fields" is defined by the language during the installation of the plugin.
+This is not crucial because the language of the fields and options in the registration form is defined by the Moodle language settings the user has made.
+
+
+Uninstall
+---------
+The "User profile fields" are **not** deleted during uninstall.
+Though they are recognized when you re-install the plugin.
+
