@@ -19,6 +19,7 @@
  *
  * @package    local_customsignup
  * @copyright  2022 Melanie Treitinger, Ruhr-Universität Bochum <melanie.treitinger@ruhr-uni-bochum.de>
+ *             based on local_custom_registration by mgerard@cblue.be, CBlue SPRL
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
