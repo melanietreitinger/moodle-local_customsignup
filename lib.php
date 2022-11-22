@@ -25,7 +25,7 @@
 
 function local_customsignup_get_additional_fields() {
     if ('' != get_config('local_customsignup', 'regreasonlist')) {
-        $reasons = get_config('local_customsignup', 'regreasonlist');
+        $reasons = explode("\n", get_config('local_customsignup', 'regreasonlist'));
     }
     else {
         $reasons = explode(",", get_string('regreasonlist', 'local_customsignup'));
