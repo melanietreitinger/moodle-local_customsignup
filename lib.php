@@ -14,6 +14,11 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+
+function local_customsignup_add_multilang($string, $lang) {
+    return '<span class="multilang" lang="'.$lang.'">'.trim($string).'</span>';
+}
+
 /**
  * Custom Signup form - lib file
  *
@@ -24,16 +29,38 @@
  */
 
 function local_customsignup_get_additional_fields() {
-    if ('' != get_config('local_customsignup', 'regreasonlist')) {
-        $reasons = explode("\n", get_config('local_customsignup', 'regreasonlist'));
+    // Usage.
+    global $CFG;
+    require_once($CFG->dirroot.'/user/profile/lib.php');
+    $regreasonlist = '';
+    $fields = profile_get_user_fields_with_data(0);
+    foreach ($fields as $field) {
+        if ('regreason' == $field->field->shortname) {
+           $regreasonlist = $field->options;
+        }
     }
-    else {
-        $reasons = explode(",", get_string('regreasonlist', 'local_customsignup'));
-    }
-    $reasons = array_map('trim', $reasons);
-    $reasonkeys = array_combine($reasons, $reasons);
 
-    $regreasonlist = array_merge(array('' => get_string('choose')), $reasonkeys);
+    // Install.
+    if ('' == $regreasonlist) {
+        $reasons = explode(",", get_string('regreasonlist', 'local_customsignup'));
+	$reasons = array_merge(array('' => get_string('choose')), $reasons);
+        $mlreasons = array();
+        $languages = get_string_manager()->get_list_of_translations();
+	foreach ($languages as $lang => $value){
+            $choose = array('' => get_string_manager()->get_string('choose', 'core', null, $lang));
+            $tmp = explode(",", get_string_manager()->get_string('regreasonlist', 'local_customsignup', null, $lang));
+	    $tmp = array_merge($choose, $tmp);
+            foreach ($tmp as $key => $value) {
+   	        if(!isset($mlreasons[$key])) {
+                    $mlreasons[$key] = local_customsignup_add_multilang($value, $lang);
+   	        }
+   	        else {
+   	           $mlreasons[$key] .= local_customsignup_add_multilang($value, $lang);
+   	        }
+   	    }
+	}
+        $regreasonlist = array_combine($reasons, $mlreasons);
+    }
 
     return [
         'confirmname' => [

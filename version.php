@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_customsignup';
-$plugin->version = 2022110707;
+$plugin->version = 2022110709;
 $plugin->release = 'v1.0-r1';
 $plugin->requires = 2020061500; // Moodle 3.9.
 $plugin->supported = [39, 311];

@@ -5,9 +5,10 @@ Requirements
 ------------
 
 This pugin requires Moodle 3.9+
+If you have more languages than English installed, please activate the "Multi-Language Content" filter with setting "Content and headings".
 
 
-Motivation for this theme
+Motivation for this plugin
 -------------------------
 With this plugin we can define custom fields for the registration form which are created as "User profile fields" **and** can be defined as "required" *only* for the registration process.
 
@@ -22,17 +23,16 @@ The fields are:
 - confirmname: Users have to use their real name.
 - regreason: Users have to enter a reason for the account creation.
 
-Both fields can be activated and declared as required in admin settings.
+Both fields can be activated and declared as "required" in admin settings.
 
 
 Note
 ----
-The language of the database entrief of the "User profile fields" is defined by the language during the installation of the plugin.
-This is not crucial because the language of the fields and options in the registration form is defined by the Moodle language settings the user has made.
+The options for the select menu of the "User profile fields" "regreason" are created with multilang tags, so the "Multi-Language Content" filter with setting "Content and headings" is needed.
 
 
 Uninstall
 ---------
 The "User profile fields" are **not** deleted during uninstall.
-Though they are recognized when you re-install the plugin.
+They are recognized when you re-install the plugin.
 

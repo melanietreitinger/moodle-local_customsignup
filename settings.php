@@ -61,20 +61,6 @@ if ($hassiteconfig) {
                 get_string('is_' . $fieldname . '_required_desc', 'local_customsignup'),
                 0
             ));
-
-            // Add textarea for select field option list.
-            if ('select' == $field['element_type']) {
-                $optionlist = str_replace(", ", "\n", get_string($fieldname.'list', 'local_customsignup'));
-                $settings->add(new admin_setting_configtextarea(
-                    'local_customsignup/'.$fieldname.'list',
-                    new lang_string($fieldname.'label', 'local_customsignup'),
-                    new lang_string($fieldname.'listdesc', 'local_customsignup'),
-                        $optionlist,
-                    PARAM_TEXT,
-                    '50',
-                    '10'
-                ));
-            }
         }
     }
 
