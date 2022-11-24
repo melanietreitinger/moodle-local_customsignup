@@ -23,7 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Benutzerdefinierte Felder Anmeldeformular';
+$string['pluginname'] = 'Benutzerdefinierte Felder im Anmeldeformular';
 
 // Settings.
 $string['customsignup_form'] = 'Konfiguration Anmeldeformular';
@@ -34,13 +34,12 @@ $string['enable_confirmname_desc'] = 'Nutzer*innen müssen ihren richtigen Namen
 $string['is_confirmname_required'] = 'Namensbestätigung erforderlich';
 $string['is_confirmname_required_desc'] = 'Ist die Bestätigung des Namens erforderlich?';
 
-$string['enable_regreason'] = 'Aktiviere Grund für Kontoerstellung';
 $string['regreasonlabel'] = 'Grund für Kontoerstellung';
+$string['enable_regreason'] = 'Aktiviere Grund für Kontoerstellung';
 $string['enable_regreason_desc'] = 'Nutzer*innen müssen einen Grund für die Kontoerstellung angeben.';
 $string['is_regreason_required'] = 'Grund für Kontoerstellung erforderlich';
 $string['is_regreason_required_desc'] = 'Ist ein Grund für die Kontoerstellung erforderlich?';
 $string['regreasonlist'] = 'Teilnahme an einem Vorkurs, Teilnahme an einem Sprachkurs, Kursteilnahme im Rahmen meines Studiums an der RUB, Kursteilnahme im Rahmen meines Studiums außerhalb der RUB, Teilnahme an einer sonstigen Veranstaltung';
-$string['regreasonlistdesc'] = 'Geben Sie hier die möglichen Gründe für eine Kontoerstellung ein. Ein Eintrag pro Zeile.';
 
 // Registration form.
 $string['confirmname'] = 'Ich bestätige, dass ich meinen tatsächlichen Vor- und Nachnamen angebenen habe.';

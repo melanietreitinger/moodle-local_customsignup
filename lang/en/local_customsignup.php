@@ -35,13 +35,12 @@ $string['enable_confirmname_desc'] = 'Users have to use their real name.';
 $string['is_confirmname_required'] = 'Confirmation of name required';
 $string['is_confirmname_required_desc'] = 'Is the confirmation of name required?';
 
-$string['enable_regreason'] = 'Enable registration reason';
 $string['regreasonlabel'] = 'Registration reasons';
+$string['enable_regreason'] = 'Enable registration reason';
 $string['enable_regreason_desc'] = 'Users have to enter a reason for the account creation.';
 $string['is_regreason_required'] = 'Registration reason required';
 $string['is_regreason_required_desc'] = 'Is a registration reason required?';
 $string['regreasonlist'] = 'Participation in a pre-course, Participation in a language course, Participation in a course studying at RUB, Participation in a course studying somewhere else, Participation in another event';
-$string['regreasonlistdesc'] = 'Enter here the reasons which are available for registration, one per line.';
 
 // Registration form.
 $string['confirmname'] = 'I confirm that this is my real first- and surname.';
