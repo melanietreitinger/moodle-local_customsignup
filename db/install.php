@@ -30,7 +30,6 @@
  */
 function xmldb_local_customsignup_install() {
     global $CFG, $DB;
-    $DB->set_debug(true);
 
     require_once($CFG->dirroot . '/local/customsignup/lib.php');
     require_once($CFG->dirroot . '/user/profile/definelib.php');
