@@ -16,7 +16,9 @@
 
 
 function local_customsignup_add_multilang($string, $lang) {
-    return '<span class="multilang" lang="'.$lang.'">'.trim($string).'</span>';
+    if ('' != $string) {
+        return '<span class="multilang" lang="'.$lang.'">'.trim($string).'</span>';
+    }
 }
 
 /**
@@ -43,11 +45,11 @@ function local_customsignup_get_additional_fields() {
     // Install.
     if ('' == $regreasonlist) {
         $reasons = explode(",", get_string('regreasonlist', 'local_customsignup'));
-	$reasons = array_merge(array('' => get_string('choose')), $reasons);
+	$reasons = array_merge(array(''), $reasons);
         $mlreasons = array();
         $languages = get_string_manager()->get_list_of_translations();
 	foreach ($languages as $lang => $value){
-            $choose = array('' => get_string_manager()->get_string('choose', 'core', null, $lang));
+            $choose = array('');
             $tmp = explode(",", get_string_manager()->get_string('regreasonlist', 'local_customsignup', null, $lang));
 	    $tmp = array_merge($choose, $tmp);
             foreach ($tmp as $key => $value) {
