@@ -98,7 +98,7 @@ function local_customsignup_extend_signup_form($mform) {
                 $cb = array($mform->createElement('checkbox', $fieldname, '', get_string($fieldname, 'local_customsignup')));
                 $mform->addGroup($cb, $fieldname.'group', $field['label'], array(' '), false);
                 if (get_config('local_customsignup', 'is_' . $fieldname . '_required')) {
-                      $mform->addGroupRule($fieldname.'group', $field['required_feedback'], 'required', null, 'client');
+                      $mform->addGroupRule($fieldname.'group', $field['required_feedback'], 'required', null, 0, 'client');
                 }
             } else {
                 if (isset($field['values'])) {
