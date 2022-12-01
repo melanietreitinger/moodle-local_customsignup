@@ -53,10 +53,9 @@ function local_customsignup_get_additional_fields() {
             $tmp = explode(",", get_string_manager()->get_string('regreasonlist', 'local_customsignup', null, $lang));
             $tmp = array_merge($choose, $tmp);
             foreach ($tmp as $key => $value) {
-                if(!isset($mlreasons[$key])) {
+                if (!isset($mlreasons[$key])) {
                     $mlreasons[$key] = local_customsignup_add_multilang($value, $lang);
-                }
-                else {
+                } else {
                     $mlreasons[$key] .= local_customsignup_add_multilang($value, $lang);
                 }
             }
