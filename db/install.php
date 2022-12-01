@@ -37,7 +37,6 @@ function xmldb_local_customsignup_install() {
     $addedfields = local_customsignup_get_additional_fields();
 
     foreach ($addedfields as $name => $field) {
-        file_put_contents('/var/tmp/moodle.log', date("Y-m-d H:i:s").': [addedfield] '.print_r($field, true)."\n", FILE_APPEND);
         $datatype = $field['element_type'];
         $datatype = ('select' == $datatype ? 'menu' : $datatype);
         $return = (in_array($datatype, array('checkbox', 'datetime', 'menu', 'text', 'textarea')) ? true : false);
