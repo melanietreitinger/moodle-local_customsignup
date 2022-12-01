@@ -38,7 +38,7 @@ function local_customsignup_get_additional_fields() {
     $fields = profile_get_user_fields_with_data(0);
     foreach ($fields as $field) {
         if ('regreason' == $field->field->shortname) {
-           $regreasonlist = $field->options;
+            $regreasonlist = $field->options;
         }
     }
 
@@ -48,19 +48,19 @@ function local_customsignup_get_additional_fields() {
         $reasons = array_merge(array(''), $reasons);
         $mlreasons = array();
         $languages = get_string_manager()->get_list_of_translations();
-        foreach ($languages as $lang => $value){
+        foreach ($languages as $lang => $value) {
             $choose = array('');
             $tmp = explode(",", get_string_manager()->get_string('regreasonlist', 'local_customsignup', null, $lang));
             $tmp = array_merge($choose, $tmp);
             foreach ($tmp as $key => $value) {
-               if(!isset($mlreasons[$key])) {
-                $mlreasons[$key] = local_customsignup_add_multilang($value, $lang);
-               }
-               else {
-                   $mlreasons[$key] .= local_customsignup_add_multilang($value, $lang);
-               }
-           }
-    }
+                if(!isset($mlreasons[$key])) {
+                    $mlreasons[$key] = local_customsignup_add_multilang($value, $lang);
+                }
+                else {
+                    $mlreasons[$key] .= local_customsignup_add_multilang($value, $lang);
+                }
+            }
+        }
         $regreasonlist = array_combine($reasons, $mlreasons);
     }
 
