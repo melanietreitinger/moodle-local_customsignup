@@ -14,13 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
-function local_customsignup_add_multilang($string, $lang) {
-    if ('' != $string) {
-        return '<span class="multilang" lang="'.$lang.'">'.trim($string).'</span>';
-    }
-}
-
 /**
  * Custom Signup form - lib file
  *
@@ -30,6 +23,24 @@ function local_customsignup_add_multilang($string, $lang) {
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Add multilang tags to a string
+ *
+ * @param string $string
+ * @param string $lang
+ * @return string|void
+ */
+function local_customsignup_add_multilang($string, $lang) {
+    if ('' != $string) {
+        return '<span class="multilang" lang="'.$lang.'">'.trim($string).'</span>';
+    }
+}
+
+/**
+ * Return an array with the additional fields for the signup form.
+ *
+ * @return array[]
+ */
 function local_customsignup_get_additional_fields() {
     // Usage.
     global $CFG;
@@ -82,7 +93,7 @@ function local_customsignup_get_additional_fields() {
 /**
  * Extend the signup form with additional fields selected in the plugin configuration
  *
- * @param $mform
+ * @param MoodleQuickForm $mform
  * @throws coding_exception
  * @throws dml_exception
  */
@@ -121,7 +132,7 @@ function local_customsignup_extend_signup_form($mform) {
 /**
  * There is no data to validate.
  *
- * @param $datas
+ * @param stdClass $datas
  * @return array
  */
 function local_customsignup_validate_extend_signup_form($datas) {
@@ -131,7 +142,7 @@ function local_customsignup_validate_extend_signup_form($datas) {
 /**
  * Handle values of our custom signup fields.
  *
- * @param $datas
+ * @param stdClass $datas
  */
 function local_customsignup_post_signup_requests($datas) {
     $addedfields = array_keys(local_customsignup_get_additional_fields());
