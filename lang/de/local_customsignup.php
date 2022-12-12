@@ -42,5 +42,5 @@ $string['is_regreason_required_desc'] = 'Ist ein Grund für die Kontoerstellung 
 $string['regreasonlist'] = 'Teilnahme an einem Vorkurs, Teilnahme an einem Sprachkurs, Kursteilnahme im Rahmen meines Studiums an der RUB, Kursteilnahme im Rahmen meines Studiums außerhalb der RUB, Teilnahme an einer sonstigen Veranstaltung';
 
 // Registration form.
-$string['confirmname'] = 'Ich bestätige, dass ich meinen tatsächlichen Vor- und Nachnamen angebenen habe.';
-$string['regreason'] = 'Grund für die Erstellung des Accounts';
+$string['confirmname'] = 'Ich bestätige, dass ich meinen tatsächlichen Vor- und Nachnamen angegeben habe.';
+$string['regreason'] = 'Grund für die Erstellung des Kontos';
