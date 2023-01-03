@@ -40,7 +40,7 @@ $string['enable_regreason'] = 'Enable registration reason';
 $string['enable_regreason_desc'] = 'Users have to enter a reason for the account creation.';
 $string['is_regreason_required'] = 'Registration reason required';
 $string['is_regreason_required_desc'] = 'Is a registration reason required?';
-$string['regreasonlist'] = 'Participation in a pre-course, Participation in a language course, Participation in a course studying at RUB, Participation in a course studying somewhere else, Participation in another event';
+$string['regreasonlist'] = 'Participation in a pre-course, Participation in a language course, Participation in a course studying at RUB, Participation in a course studying somewhere else, Teaching a course as external teacher, Participation in another event';
 
 // Registration form.
 $string['confirmname'] = 'I confirm that this is my real first- and surname.';
